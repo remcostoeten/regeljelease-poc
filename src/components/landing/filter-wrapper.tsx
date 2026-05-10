@@ -50,7 +50,7 @@ const fields = [
   },
   { label: "Model", value: "Kies de modellen" },
   { label: "Budget tot", value: "tot..." },
-  { label: "Trefwoord", value: "Bijv. GTI of L2H2" },
+  { label: "Trefwoord", value: "Trefwoord... bijv. GTI of L2H2" },
 ];
 
 export function FilterWrapper() {
@@ -60,19 +60,19 @@ export function FilterWrapper() {
         <div className="grid gap-4 md:grid-cols-4">
           {fields.map((field) => (
             <label key={field.label} className="block">
-              <span className="mb-2 block text-sm font-medium text-brand-ink">
+              <span className="mb-2 hidden text-sm font-medium text-brand-ink md:block">
                 {field.label}
               </span>
               <span className="flex h-filter-field items-center justify-between rounded-field bg-brand-field px-4 text-sm text-brand-ink">
                 <span className="truncate">{field.value}</span>
-                {field.label !== "Trefwoord" ? <ChevronDownIcon /> : null}
+                <ChevronDownIcon />
               </span>
             </label>
           ))}
         </div>
 
         <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-brand-ink">
+          <ul className="hidden flex-wrap items-center gap-x-6 gap-y-3 text-sm text-brand-ink md:flex">
             {["+30.000 voertuigen", "Binnen een dag geregeld", "Zonder jaarcijfers"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-2">
@@ -83,11 +83,11 @@ export function FilterWrapper() {
             )}
           </ul>
 
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row md:items-center">
             <button className="text-sm font-medium text-brand-muted underline underline-offset-2">
               + Meer filters
             </button>
-            <button className="h-14 rounded-field bg-brand-ink px-7 text-base font-semibold text-white">
+            <button className="h-14 w-full rounded-field bg-brand-ink px-7 text-base font-semibold text-white md:w-auto">
               Aanbod bekijken (20.334)
             </button>
           </div>

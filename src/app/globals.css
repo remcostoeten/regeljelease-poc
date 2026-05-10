@@ -115,11 +115,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  overflow-x: clip;
 }
 
 .hero-background {
   position: relative;
-  overflow-x: clip;
   background: var(--background);
 }
 
@@ -136,4 +136,13 @@ body {
 .hero-background > :not(.hero-background-shape) {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-background {
+    background: linear-gradient(140deg, #ea7520 0%, #e7371c 100%);
+  }
+  .hero-background-shape {
+    display: none;
+  }
 }

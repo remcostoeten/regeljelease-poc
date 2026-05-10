@@ -20,6 +20,14 @@ function ChevronDownIcon() {
     );
 }
 
+function MenuIcon() {
+    return (
+        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    );
+}
+
 function ClockIcon() {
     return (
         <svg
@@ -71,20 +79,22 @@ export function Navbar() {
     return (
         <header className="relative z-10 h-header text-brand-surface">
             <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto flex w-full max-w-page justify-end px-5 sm:px-8">
-        <button className="pointer-events-auto hidden h-menu-item w-contact-menu min-w-contact-menu max-w-contact-menu items-center justify-between rounded-b-contact-menu bg-brand-canvas px-6 py-4 text-sm font-medium text-brand-ink shadow-brand-small md:flex">
+                <button className="pointer-events-auto hidden h-menu-item w-contact-menu min-w-contact-menu max-w-contact-menu items-center justify-between rounded-b-contact-menu bg-brand-canvas px-6 py-4 text-sm font-medium text-brand-ink shadow-brand-small md:flex">
                     <span className="flex items-center gap-1.5">
-            <ClockIcon />
-            {contactConfig.openingLabel}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-brand-accent" />
-            {contactConfig.openingTime}
-          </span>
-          <span className="flex items-center gap-1.5 font-bold">
-            <PhoneIcon />
-            {contactConfig.phoneNumber}
-          </span>
-                    <span className="text-brand-primary">
+                        <ClockIcon />
+                        {contactConfig.openingLabel}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                        <span className="h-2 w-2 rounded-full animate-pulse bg-brand-accent" />
+                        {contactConfig.openingTime}
+                    </span>
+                    <a
+                        href={`tel:${contactConfig.phoneNumber.replace(/\s+/g, "")}`}
+                        className="flex items-center gap-1.5 font-bold"
+                    >
+                        <PhoneIcon />
+                        {contactConfig.phoneNumber}
+                    </a>                    <span className="text-brand-primary">
                         <ChevronDownIcon />
                     </span>
                 </button>
@@ -93,15 +103,23 @@ export function Navbar() {
                 <nav className="flex h-menu-item w-full items-center justify-between gap-4">
                     <Logo className="flex shrink-0 items-center" />
                     <ul className="hidden h-menu-item items-center gap-4 text-base font-medium leading-none md:flex">
-            {navItems.map((item) => (
-              <li key={item}>
-                <button className="flex h-menu-item items-center justify-center gap-1 rounded-field px-1 py-4">
-                  {item}
-                  <ChevronDownIcon />
-                </button>
-              </li>
+                        {navItems.map((item) => (
+                            <li key={item}>
+                                <button className="flex h-menu-item items-center justify-center gap-1 rounded-field px-1 py-4">
+                                    {item}
+                                    <ChevronDownIcon />
+                                </button>
+                            </li>
                         ))}
                     </ul>
+                    <div className="flex items-center gap-3 md:hidden">
+                        <button aria-label="Bel ons" className="flex h-10 w-10 items-center justify-center">
+                            <PhoneIcon />
+                        </button>
+                        <button aria-label="Open navigatiemenu" className="flex h-10 w-10 items-center justify-center">
+                            <MenuIcon />
+                        </button>
+                    </div>
                 </nav>
             </div>
         </header>
