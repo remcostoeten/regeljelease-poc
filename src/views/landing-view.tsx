@@ -1,9 +1,13 @@
-import { FilterBar } from "@/features/filters";
 import { HeroSection } from "@/features/landing/components/hero-section";
 import { Navbar } from "@/features/landing/components/navbar";
-import { HeroBackdropShape } from "@/shared/ui/brand";
+import type { HomeApiResponse } from "@/features/filters/lib/types";
+import { FilterBar } from "@/features/filters";
+import { HeroBackdropShape } from "@/shared/ui/brand/hero-backdrop-shape";
+import { ErrorBoundary } from "@/shared/ui/error-boundary";
 
-export function LandingView() {
+type Props = { initialData: HomeApiResponse };
+
+export function LandingView({ initialData }: Props) {
   return (
     <main className="min-h-screen bg-brand-canvas">
       <div className="hero-background pb-14">
@@ -12,7 +16,9 @@ export function LandingView() {
         <HeroSection />
       </div>
       <div className="relative z-10 -mt-8 pb-8 lg:mt-0 lg:pt-0">
-        <FilterBar />
+        <ErrorBoundary>
+          <FilterBar initialData={initialData} />
+        </ErrorBoundary>
       </div>
     </main>
   );

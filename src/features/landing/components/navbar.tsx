@@ -1,4 +1,4 @@
-import { Logo } from "@/shared/ui/brand";
+import { Logo } from "@/shared/ui/brand/logo";
 import {
   ChevronDownIcon,
   ClockIcon,
@@ -6,7 +6,7 @@ import {
   PhoneIcon,
 } from "@/shared/ui/icons";
 import { contactConfig } from "@/config/contact";
-import { TOP_NAV_ITEMS } from "../navigation";
+import { TOP_NAV_ITEMS } from "../constants/navigation";
 
 export function Navbar() {
   return (

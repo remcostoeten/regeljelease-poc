@@ -1,10 +1,8 @@
-export { Logo } from "./logo";
-
-type SvgBlockProps = {
+type Props = {
     className?: string;
 };
 
-export function TrustpilotLogo({ className = "h-auto w-trustpilot" }: SvgBlockProps) {
+export function TrustpilotLogo({ className = "h-auto w-trustpilot" }: Props) {
     return (
         <svg
             className={className}
@@ -31,36 +29,6 @@ export function TrustpilotLogo({ className = "h-auto w-trustpilot" }: SvgBlockPr
             <path d="M187.197 20.9206H207.815V0.325317H187.197V20.9206Z" fill="#00B67A" />
             <path d="M187.197 20.9206H197.506V0.325317H187.197V20.9206Z" fill="#00B67A" />
             <path d="M204.773 9.08773L193.079 17.5735L194.785 12.329L190.318 9.08773H195.839L197.545 3.84283L199.251 9.08773H204.773ZM197.546 14.3326L200.739 13.6616L202.012 17.5735L197.546 14.3326Z" fill="white" />
-        </svg>
-    );
-}
-
-export function HeroBackdropShape({ className = "hero-background-shape" }: SvgBlockProps) {
-    return (
-        <svg
-            className={className}
-            viewBox="0 0 1281 600"
-            fill="none"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-        >
-            <path
-                d="M0 0V399.177C0 545.248 151.096 642.343 283.812 581.605L1281 125V0H1004H0Z"
-                fill="url(#hero-gradient)"
-            />
-            <defs>
-                <linearGradient
-                    id="hero-gradient"
-                    x1="-298.233"
-                    y1="975.319"
-                    x2="1096.75"
-                    y2="340.541"
-                    gradientUnits="userSpaceOnUse"
-                >
-                    <stop offset="0.42" stopColor="#EA7520" />
-                    <stop offset="1" stopColor="#E7371C" />
-                </linearGradient>
-            </defs>
         </svg>
     );
 }

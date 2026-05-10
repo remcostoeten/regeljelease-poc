@@ -1,11 +1,11 @@
-import { TrustpilotLogo } from "@/shared/ui/brand";
+import { TrustpilotLogo } from "@/shared/ui/brand/trustpilot-logo";
 import { TRUSTPILOT_RATING } from "../constants/trustpilot";
 
 export function HeroSection() {
   return (
     <section className="mx-auto mt-4 flex w-full max-w-page flex-col gap-5 px-5 pt-4 pb-0 text-brand-surface sm:px-8 lg:mt-header-hero-gap lg:h-hero-frame lg:flex-row lg:items-start lg:justify-between lg:gap-hero-gap lg:px-hero-frame-padding-x lg:py-0">
       <div className="flex max-w-hero-copy-column grow flex-col items-center gap-hero-copy-gap justify-center lg:h-hero-copy-stack lg:items-start">
-        <h1 className="w-full font-heading text-[1.75rem] leading-[1.15] font-medium text-center lg:max-w-hero-copy lg:text-left lg:text-heading-h1 lg:leading-11.25">
+        <h1 className="w-full font-heading text-[1.75rem] leading-[1.15] font-medium text-center lg:max-w-hero-copy lg:text-left lg:text-heading-h1 lg:leading-heading-h1--line-height">
           <span className="block">De lease van je</span>
           <span className="block">
             voertuig <span className="text-brand-ink">binnen 15</span>
@@ -24,7 +24,7 @@ export function HeroSection() {
 
       <div className="relative w-full lg:min-h-hero-photo-height lg:w-hero-media lg:shrink-0">
         <div
-          className="relative ml-auto h-[300px] w-[85%] overflow-hidden rounded-[2.5rem] bg-brand-field shadow-brand-photo lg:absolute lg:right-0 lg:top-0 lg:ml-0 lg:h-hero-photo-height lg:w-hero-photo-width lg:rounded-photo"
+          className="relative ml-auto h-[300px] w-[85%] overflow-hidden rounded-photo bg-brand-field shadow-brand-photo lg:absolute lg:right-0 lg:top-0 lg:ml-0 lg:h-hero-photo-height lg:w-hero-photo-width"
         >
           <div
             className="h-full w-full bg-cover lg:[background-position:54%_center]"

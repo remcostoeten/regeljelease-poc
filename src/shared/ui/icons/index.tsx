@@ -2,6 +2,8 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
+// would typically use Lucide Icons or Heroicons if using certain ui libs
+
 export function ChevronDownIcon({
   className = "h-5 w-5",
   ...props
