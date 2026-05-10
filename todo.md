@@ -1,7 +1,7 @@
-// motiion dropdown helper voor top info bar
-// chevron dropdown helper voor megamenu
-// goeie select component
-// accessibillity check
-// api 
-// lint build
-// roundup write
+# TODO
+
+- [ ] Motion dropdown helper for top info bar
+- [ ] Chevron dropdown helper for mega menu
+- [ ] Accessibility check
+- [ ] Lint & build
+- [ ] Roundup write
