@@ -21,7 +21,7 @@
 }
 
 :root {
-  --background: #f4f4f7;
+  --background: #f7f7f4;
   --foreground: #232651;
   color-scheme: light;
 }
@@ -36,8 +36,8 @@
   --color-rjl-navy: #232651;
   --color-rjl-navy-dark: #151732;
   --color-rjl-white: #ffffff;
-  --color-rjl-page: #f4f4f7;
-  --color-rjl-field: #f4f4f7;
+  --color-rjl-page: var(--background);
+  --color-rjl-field: var(--background);
   --color-rjl-field-hover: #e9e9ee;
   --color-rjl-chip: #c8c9d3;
   --color-rjl-muted: #5a5c7d;
@@ -49,8 +49,8 @@
   --color-brand-ink: #232651;
   --color-brand-ink-strong: #151732;
   --color-brand-surface: #ffffff;
-  --color-brand-canvas: #f4f4f7;
-  --color-brand-field: #f4f4f7;
+  --color-brand-canvas: var(--background);
+  --color-brand-field: var(--background);
   --color-brand-field-hover: #e9e9ee;
   --color-brand-field-selected: #c8c9d3;
   --color-brand-muted: #5a5c7d;
