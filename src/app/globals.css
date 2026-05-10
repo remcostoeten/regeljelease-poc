@@ -3,6 +3,7 @@
 :root {
   --background: #f4f4f7;
   --foreground: #232651;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -35,16 +36,41 @@
   --color-brand-muted: #5a5c7d;
   --color-brand-border: #e9e9ee;
 
-  --background-image-brand-hero: linear-gradient(90deg, #ea7520 15.33%, #e7371c 78.17%);
+  --container-page: 75rem;
+
+  --background-image-brand-hero: linear-gradient(77.97deg, #ea7520 15.33%, #e7371c 78.17%);
+
+  --spacing-header: 7.25rem;
+  --spacing-header-content-offset: 4rem;
+  --spacing-logo-width: 15.875rem;
+  --spacing-logo-height: 3.25rem;
+  --spacing-contact-menu: 25rem;
+  --spacing-menu-item: 3.25rem;
+  --spacing-hero-copy: 35rem;
+  --spacing-hero-media: 30rem;
+  --spacing-hero-photo-width: 29rem;
+  --spacing-hero-photo-height: 25rem;
+  --spacing-hero-testimonial: 19.875rem;
+  --spacing-hero-testimonial-left: -8.625rem;
+  --spacing-hero-testimonial-top: 5.75rem;
+  --spacing-filter-field: 3.375rem;
+  --spacing-trustpilot: 13rem;
 
   --radius-field: 9999px;
+  --radius-contact-menu: 1.25rem;
   --radius-card: 32px;
   --radius-photo: 57px;
 
-  --shadow-brand-card: 0 0 20px rgb(0 0 0 / 20%);
+  --shadow-brand-card: 0 6px 24px rgb(0 0 0 / 16%);
+  --shadow-brand-small: 0 0 20px rgb(0 0 0 / 20%);
   --shadow-brand-float: 0 18px 45px rgb(35 38 81 / 18%);
   --shadow-brand-photo: -14px 8px 28px rgb(0 0 0 / 50%);
 
+  --text-heading-h1: 2.625rem;
+  --text-heading-h1--line-height: 2.8125rem;
+  --text-heading-h1--letter-spacing: 0.039rem;
+
+  --font-heading: "Owners XWide", var(--font-geist-sans), Arial, Helvetica, sans-serif;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -53,4 +79,25 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+.hero-background {
+  position: relative;
+  overflow-x: clip;
+  background: var(--background);
+}
+
+.hero-background-shape {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 600px;
+  width: 100vw;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero-background > :not(.hero-background-shape) {
+  position: relative;
+  z-index: 1;
 }
