@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Gochi_Hand, Geist_Mono, Inter } from "next/font/google";
+import { Gochi_Hand, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,11 +11,6 @@ const gochiHand = Gochi_Hand({
     variable: "--font-gochi-hand",
     subsets: ["latin"],
     weight: "400",
-});
-
-const geistMono = Geist_Mono({
-    variable: "--font-geist-mono",
-    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +26,7 @@ export default function RootLayout({
     return (
             <html
                 lang="nl"
-                className={`${inter.variable} ${gochiHand.variable} ${geistMono.variable} h-full antialiased`}
+                className={`${inter.variable} ${gochiHand.variable} h-full antialiased`}
             >
             <body className="min-h-full flex flex-col">
                 {children}
@@ -39,3 +34,4 @@ export default function RootLayout({
         </html>
     );
 }
+
