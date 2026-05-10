@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 export function LandingPage() {
   return (
     <main className="min-h-screen bg-brand-canvas">
-      <div className="hero-background pb-14">
+      <div className="hero-background pb-6 md:pb-14">
         <svg
           className="hero-background-shape"
           viewBox="0 0 1281 600"
@@ -34,7 +34,7 @@ export function LandingPage() {
         <Navbar />
         <HeroSection />
       </div>
-      <div className="relative z-10 pb-20">
+      <div className="relative z-10 pt-4 pb-20 md:pt-0">
         <FilterWrapper />
       </div>
     </main>

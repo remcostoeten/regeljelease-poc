@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Gochi_Hand, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { DevWidget } from "@remcostoeten/dev-widget/client";
 
 const inter = Inter({
     variable: "--font-inter",
@@ -36,7 +35,6 @@ export default function RootLayout({
             >
             <body className="min-h-full flex flex-col">
                 {children}
-                <DevWidget />
             </body>
         </html>
     );

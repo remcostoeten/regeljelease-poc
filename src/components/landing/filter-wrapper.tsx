@@ -63,7 +63,7 @@ export function FilterWrapper() {
               <span className="mb-2 hidden text-sm font-medium text-brand-ink md:block">
                 {field.label}
               </span>
-              <span className="flex h-filter-field items-center justify-between rounded-field bg-brand-field px-4 text-sm text-brand-ink">
+              <span className="flex h-filter-field items-center justify-between rounded-field border border-brand-border bg-brand-field px-4 text-sm text-brand-ink">
                 <span className="truncate">{field.value}</span>
                 <ChevronDownIcon />
               </span>

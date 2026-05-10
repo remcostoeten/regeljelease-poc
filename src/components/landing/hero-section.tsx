@@ -31,7 +31,7 @@ function TrustpilotLogo() {
 
 export function HeroSection() {
     return (
-        <section className="mx-auto mt-8 flex w-full max-w-page flex-col gap-10 px-5 py-6 text-brand-surface sm:px-8 md:mt-header-hero-gap md:h-hero-frame md:flex-row md:items-start md:justify-between md:gap-hero-gap md:px-hero-frame-padding-x md:py-0">
+        <section className="mx-auto mt-4 flex w-full max-w-page flex-col gap-5 px-5 pt-4 pb-0 text-brand-surface sm:px-8 md:mt-header-hero-gap md:h-hero-frame md:flex-row md:items-start md:justify-between md:gap-hero-gap md:px-hero-frame-padding-x md:py-0">
             <div className="flex max-w-hero-copy-column grow flex-col items-center gap-hero-copy-gap justify-center md:h-hero-copy-stack md:items-start">
                 <h1 className="w-full font-heading text-heading-h1 font-medium text-center md:max-w-hero-copy md:text-left">
                     <span className="block">De lease van je</span>
@@ -48,7 +48,7 @@ export function HeroSection() {
                 </div>
             </div>
 
-            <div className="relative mt-6 w-full pb-20 md:mt-0 md:min-h-hero-photo-height md:w-hero-media md:shrink-0 md:pb-0">
+            <div className="relative w-full pb-20 md:min-h-hero-photo-height md:w-hero-media md:shrink-0 md:pb-0">
                 <div className="relative ml-auto h-[300px] w-[85%] overflow-hidden rounded-[2.5rem] bg-brand-field shadow-brand-photo md:absolute md:right-0 md:top-0 md:ml-0 md:h-hero-photo-height md:w-hero-photo-width md:rounded-photo">
                     <div
                         className="h-full w-full bg-cover"
