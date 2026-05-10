@@ -1,7 +1,13 @@
-function TrustpilotLogo() {
+export { Logo } from "./logo";
+
+type SvgBlockProps = {
+    className?: string;
+};
+
+export function TrustpilotLogo({ className = "h-auto w-trustpilot" }: SvgBlockProps) {
     return (
         <svg
-            className="h-auto w-trustpilot"
+            className={className}
             viewBox="0 0 208 21"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -29,48 +35,32 @@ function TrustpilotLogo() {
     );
 }
 
-export function HeroSection() {
+export function HeroBackdropShape({ className = "hero-background-shape" }: SvgBlockProps) {
     return (
-        <section className="mx-auto mt-4 flex w-full max-w-page flex-col gap-5 px-5 pt-4 pb-0 text-brand-surface sm:px-8 md:mt-header-hero-gap md:h-hero-frame md:flex-row md:items-start md:justify-between md:gap-hero-gap md:px-hero-frame-padding-x md:py-0">
-            <div className="flex max-w-hero-copy-column grow flex-col items-center gap-hero-copy-gap justify-center md:h-hero-copy-stack md:items-start">
-                <h1 className="w-full font-heading text-heading-h1 font-medium text-center md:max-w-hero-copy md:text-left">
-                    <span className="block">De lease van je</span>
-                    <span className="block">
-                        voertuig <span className="text-brand-ink">binnen 15</span>
-                    </span>
-                    <span className="block text-brand-ink">minuten geregeld</span>
-                </h1>
-                <div className="text-brand-ink text-center md:text-left">
-                    <TrustpilotLogo />
-                    <p className="mt-1 text-review-copy font-medium">
-                        Uitstekend <strong>4.9 uit 5</strong> op basis van 3.155 reviews
-                    </p>
-                </div>
-            </div>
-
-            <div className="relative w-full pb-20 md:min-h-hero-photo-height md:w-hero-media md:shrink-0 md:pb-0">
-                <div className="relative ml-auto h-[300px] w-[85%] overflow-hidden rounded-[2.5rem] bg-brand-field shadow-brand-photo md:absolute md:right-0 md:top-0 md:ml-0 md:h-hero-photo-height md:w-hero-photo-width md:rounded-photo">
-                    <div
-                        className="h-full w-full bg-cover"
-                        style={{
-                            backgroundImage: "url('/hero-worker.webp')",
-                            backgroundPosition: "54% center",
-                        }}
-                        role="img"
-                        aria-label="Bouwvakker bij zijn bedrijfswagen"
-                    />
-                </div>
-                <div className="absolute bottom-4 left-0 flex w-[240px] items-center rounded-testimonial bg-white/92 px-5 py-5 text-brand-ink shadow-brand-float md:left-hero-testimonial-left md:top-hero-testimonial-top md:h-hero-testimonial-height md:w-hero-testimonial md:px-9 md:py-0">
-                    <p className="text-sm leading-snug md:text-testimonial">
-                        <span className="font-hand text-[1.5rem] text-brand-accent md:text-testimonial-name">
-                            Martijn:
-                        </span>{" "}
-                        Ongelooflijk hoe snel en makkelijk dit is verlopen.{" "}
-                        <strong>Mika</strong> hield de vaart er goed in en heeft in 1 dag
-                        alles geregeld. Geweldig!
-                    </p>
-                </div>
-            </div>
-        </section>
+        <svg
+            className={className}
+            viewBox="0 0 1281 600"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+        >
+            <path
+                d="M0 0V399.177C0 545.248 151.096 642.343 283.812 581.605L1281 125V0H1004H0Z"
+                fill="url(#hero-gradient)"
+            />
+            <defs>
+                <linearGradient
+                    id="hero-gradient"
+                    x1="-298.233"
+                    y1="975.319"
+                    x2="1096.75"
+                    y2="340.541"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop offset="0.42" stopColor="#EA7520" />
+                    <stop offset="1" stopColor="#E7371C" />
+                </linearGradient>
+            </defs>
+        </svg>
     );
 }
