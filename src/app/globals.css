@@ -1,5 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Owners XWide";
+  src:
+    local("Owners XWide Regular"),
+    url("/fonts/OwnersXWide-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Owners XWide";
+  src:
+    local("Owners XWide Medium"),
+    url("/fonts/OwnersXWide-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #f4f4f7;
   --foreground: #232651;
@@ -42,43 +62,59 @@
 
   --spacing-header: 7.25rem;
   --spacing-header-content-offset: 4rem;
+  --spacing-header-hero-gap: 3.75rem;
   --spacing-logo-width: 15.875rem;
   --spacing-logo-height: 3.25rem;
   --spacing-contact-menu: 25rem;
   --spacing-menu-item: 3.25rem;
-  --spacing-hero-copy: 35rem;
+  --spacing-hero-frame: 25.125rem;
+  --spacing-hero-frame-padding-x: 2.5rem;
+  --spacing-hero-copy-column: 41rem;
+  --spacing-hero-copy-stack: 17.25rem;
+  --spacing-hero-copy-gap: 1.1875rem;
+  --spacing-hero-copy: 32.25rem;
   --spacing-hero-media: 30rem;
+  --spacing-hero-gap: 4rem;
   --spacing-hero-photo-width: 29rem;
-  --spacing-hero-photo-height: 25rem;
-  --spacing-hero-testimonial: 19.875rem;
+  --spacing-hero-photo-height: 25.125rem;
+  --spacing-hero-testimonial: 18.1875rem;
+  --spacing-hero-testimonial-height: 11.4375rem;
   --spacing-hero-testimonial-left: -8.625rem;
-  --spacing-hero-testimonial-top: 5.75rem;
+  --spacing-hero-testimonial-top: 5.8125rem;
   --spacing-filter-field: 3.375rem;
   --spacing-trustpilot: 13rem;
 
   --radius-field: 9999px;
   --radius-contact-menu: 1.25rem;
+  --radius-testimonial: 1.375rem;
   --radius-card: 32px;
   --radius-photo: 57px;
 
   --shadow-brand-card: 0 6px 24px rgb(0 0 0 / 16%);
   --shadow-brand-small: 0 0 20px rgb(0 0 0 / 20%);
-  --shadow-brand-float: 0 18px 45px rgb(35 38 81 / 18%);
-  --shadow-brand-photo: -14px 8px 28px rgb(0 0 0 / 50%);
+  --shadow-brand-float: 0 4px 33px rgb(0 0 0 / 50%);
+  --shadow-brand-photo: -22px 18px 38px rgb(0 0 0 / 58%);
 
   --text-heading-h1: 2.625rem;
   --text-heading-h1--line-height: 2.8125rem;
   --text-heading-h1--letter-spacing: 0.039rem;
+  --text-review-copy: 0.875rem;
+  --text-review-copy--line-height: 1.25rem;
+  --text-testimonial: 1rem;
+  --text-testimonial--line-height: 1.35rem;
+  --text-testimonial-name: 2.125rem;
+  --text-testimonial-name--line-height: 1.3125rem;
 
-  --font-heading: "Owners XWide", var(--font-geist-sans), Arial, Helvetica, sans-serif;
-  --font-sans: var(--font-geist-sans);
+  --font-heading: "Owners XWide", var(--font-inter), Arial, Helvetica, sans-serif;
+  --font-hand: var(--font-gochi-hand), cursive;
+  --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 .hero-background {

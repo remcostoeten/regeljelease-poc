@@ -31,21 +31,24 @@ function TrustpilotLogo() {
 
 export function HeroSection() {
   return (
-    <section className="mx-auto grid w-full max-w-page items-center gap-10 px-5 pb-36 pt-8 text-brand-surface sm:px-8 md:grid-cols-[minmax(0,1fr)_480px] md:pb-40 md:pt-10 lg:grid-cols-[minmax(0,1fr)_480px] lg:gap-16">
-      <div className="max-w-hero-copy">
-        <h1 className="font-heading text-heading-h1 font-medium">
-          De lease van je voertuig{" "}
-          <span className="text-brand-ink">binnen 15 minuten geregeld</span>
+    <section className="mx-auto mt-header-hero-gap flex w-full max-w-page flex-col gap-10 px-5 py-12 text-brand-surface sm:px-8 md:h-hero-frame md:flex-row md:items-start md:justify-between md:gap-hero-gap md:px-hero-frame-padding-x md:py-0">
+      <div className="flex max-w-hero-copy-column grow flex-col justify-center gap-hero-copy-gap md:h-hero-copy-stack">
+        <h1 className="w-full max-w-hero-copy font-heading text-heading-h1 font-medium">
+          <span className="block">De lease van je</span>
+          <span className="block">
+            voertuig <span className="text-brand-ink">binnen 15</span>
+          </span>
+          <span className="block text-brand-ink">minuten geregeld</span>
         </h1>
-        <div className="mt-9 text-brand-ink">
+        <div className="text-brand-ink">
           <TrustpilotLogo />
-          <p className="mt-1 text-sm font-medium">
+          <p className="mt-1 text-review-copy font-medium">
             Uitstekend <strong>4.9 uit 5</strong> op basis van 3.155 reviews
           </p>
         </div>
       </div>
 
-      <div className="relative hidden min-h-hero-photo-height md:block">
+      <div className="relative hidden min-h-hero-photo-height w-hero-media shrink-0 md:block">
         <div className="absolute right-0 top-0 h-hero-photo-height w-hero-photo-width overflow-hidden rounded-photo bg-brand-field shadow-brand-photo">
           <div
             className="h-full w-full bg-cover"
@@ -57,9 +60,11 @@ export function HeroSection() {
             aria-label="Bouwvakker bij zijn bedrijfswagen"
           />
         </div>
-        <div className="absolute left-hero-testimonial-left top-hero-testimonial-top w-hero-testimonial rounded-contact-menu bg-white/90 px-9 py-8 text-brand-ink shadow-brand-float backdrop-blur-sm">
-          <p className="text-lg leading-snug">
-            <span className="font-bold text-brand-accent">Martijn:</span>{" "}
+        <div className="absolute left-hero-testimonial-left top-hero-testimonial-top flex h-hero-testimonial-height w-hero-testimonial items-center rounded-testimonial bg-white/92 px-9 text-brand-ink shadow-brand-float">
+          <p className="text-testimonial">
+            <span className="font-hand text-testimonial-name text-brand-accent">
+              Martijn:
+            </span>{" "}
             Ongelooflijk hoe snel en makkelijk dit is verlopen.{" "}
             <strong>Mika</strong> hield de vaart er goed in en heeft in 1 dag
             alles geregeld. Geweldig!
