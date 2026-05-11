@@ -1,0 +1,16 @@
+# Proprietary Assessment License
+
+Copyright (c) 2026 Remco Stoeten
+
+All rights reserved.
+
+This software and associated documentation files (the "Software") are provided solely for the purpose of a technical assessment and evaluation by the designated recipient.
+
+The following restrictions apply:
+
+1. **Non-Commercial Use Only**: The Software may only be used by the recipient for the purpose of evaluating the technical skills of the author.
+2. **No Redistribution**: The Software may not be redistributed, sold, or shared with third parties without the express written permission of the author.
+3. **No Modification/Derivatives**: The Software may not be modified, transformed, or used as a basis for other projects without the express written permission of the author.
+4. **No Reproduction**: The design, code patterns, and specific implementations contained within this repository are the intellectual property of Remco Stoeten and may not be reproduced in commercial products without a separate licensing agreement.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
