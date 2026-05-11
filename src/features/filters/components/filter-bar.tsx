@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { CheckIcon } from "@/shared/ui/icons";
-import { toOptions, formatTotal } from "../lib/format";
-import { FILTER_USPS, PRICE_OPTIONS } from "../lib/constants";
-import type { HomeApiResponse } from "../lib/types";
-import { useFilters } from "../lib/use-filters";
+import { toOptions, formatTotal } from "../helpers/format";
+import { FILTER_USPS, PRICE_OPTIONS } from "../constants";
+import type { HomeApiResponse } from "../types";
+import { useFilters } from "../data/hooks/use-filters";
 import { FilterField } from "./filter-field";
 
 type Props = { initialData: HomeApiResponse };

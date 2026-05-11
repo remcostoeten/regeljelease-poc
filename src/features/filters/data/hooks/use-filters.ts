@@ -2,8 +2,8 @@
 
 import { useRef, useState, useTransition } from "react";
 import { useDebounceCallback } from "@/shared/hooks/use-debounce";
-import { fetchSuggestions } from "./queries";
-import type { FilterParams, HomeApiResponse } from "./types";
+import { fetchSuggestions } from "../queries/fetch-suggestions";
+import type { FilterParams, HomeApiResponse } from "../../types";
 
 const TEXT_KEYS = new Set<keyof FilterParams>(["text", "maxMileage"]);
 const DEBOUNCE_MS = 400;
@@ -53,7 +53,6 @@ export function useFilters(initialData: HomeApiResponse) {
     if (key === "brand") next.model = "";
     setFilters(next);
 
-    // Cancel any pending debounced fetch to prevent race conditions
     debouncedFetch.cancel();
 
     if (TEXT_KEYS.has(key)) {

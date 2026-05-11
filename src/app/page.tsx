@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getInitialData } from "@/lib/api/get-initial-data";
+import { getInitialData } from "@/features/filters/data/queries/get-initial-data";
 import { LandingView } from "@/views/landing-view";
 
 export const metadata: Metadata = {

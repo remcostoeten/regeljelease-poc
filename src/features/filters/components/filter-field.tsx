@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { useShortcut } from "@remcostoeten/use-shortcut/react";
 import { ChevronDownIcon } from "@/shared/ui/icons";
-import type { FieldOption } from "../lib/types";
+import type { FieldOption } from "../types";
 import { FilterChip } from "./filter-chip";
 
-export type { FieldOption } from "../lib/types";
+export type { FieldOption } from "../types";
 
 type Props = {
   label: string;

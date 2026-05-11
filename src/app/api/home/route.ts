@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
   const res = await fetch(upstream.toString(), {
     headers: { "User-Agent": "Opdracht kandidaat front-end" },
     // No caching — client-side filter requests must return fresh results.
-    // Contrast with get-initial-data.ts (revalidate: 60) which caches the SSR initial load.
+    // Contrast with the initial SSR load (revalidate: 60) which is cached.
     next: { revalidate: 0 },
   });
 

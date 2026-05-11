@@ -1,4 +1,4 @@
-import type { FieldOption } from "./types";
+import type { FieldOption } from "../types";
 
 export function toLabel(s: { value: string; displayName?: string }): string {
   return s.displayName ?? s.value;

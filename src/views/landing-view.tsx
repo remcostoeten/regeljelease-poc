@@ -1,7 +1,7 @@
 import { HeroSection } from "@/features/landing/components/hero-section";
 import { Navbar } from "@/features/landing/components/navbar";
-import type { HomeApiResponse } from "@/features/filters/lib/types";
-import { FilterBar } from "@/features/filters";
+import type { HomeApiResponse } from "@/features/filters/types";
+import { FilterBar } from "@/features/filters/components/filter-bar";
 import { HeroBackdropShape } from "@/shared/ui/brand/hero-backdrop-shape";
 import { ErrorBoundary } from "@/shared/ui/error-boundary";
 
