@@ -1,5 +1,9 @@
 # Regeljelease — Front-end Assessment
 
+<video controls width="100%">
+  <source src="./showcase.webm" type="video/webm">
+</video>
+
 The assessment requirements:
 1)
 - Got handed a Figma design (w/o dev access so no exports sadly)
