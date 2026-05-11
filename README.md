@@ -1,8 +1,6 @@
 # Regeljelease — Front-end Assessment
 
-<video controls width="100%">
-  <source src="./showcase.webm" type="video/webm">
-</video>
+<video src="./showcase.webm" controls width="100%"></video>
 
 The assessment requirements:
 1)
