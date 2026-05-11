@@ -3,7 +3,7 @@
 import { useRef, useState, useTransition } from "react";
 import { useDebounceCallback } from "@/shared/hooks/use-debounce";
 import { fetchSuggestions } from "../queries/fetch-suggestions";
-import type { FilterParams, HomeApiResponse } from "../../types";
+import type { FilterParams, FilterRes } from "../../types";
 
 const TEXT_KEYS = new Set<keyof FilterParams>(["text", "maxMileage"]);
 const DEBOUNCE_MS = 400;
@@ -19,10 +19,11 @@ const EMPTY_FILTERS: Required<FilterParams> = {
   text: "",
 };
 
-export function useFilters(initialData: HomeApiResponse) {
+export function useFilters(initialData: FilterRes) {
   const [filters, setFilters] = useState<Required<FilterParams>>(EMPTY_FILTERS);
   const [suggestions, setSuggestions] = useState(initialData.suggestions);
   const [total, setTotal] = useState(initialData.total);
+  const [url, setUrl] = useState(initialData.url);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
@@ -35,6 +36,7 @@ export function useFilters(initialData: HomeApiResponse) {
         const result = await fetchSuggestions(params);
         setSuggestions(result.suggestions);
         setTotal(result.total);
+        setUrl(result.url);
         setError(null);
       } catch (err) {
         console.error("[useFilters]", err);
@@ -62,7 +64,7 @@ export function useFilters(initialData: HomeApiResponse) {
     }
   }
 
-  return { filters, setFilter, suggestions, total, isPending, error } as const;
+  return { filters, setFilter, suggestions, total, url, isPending, error } as const;
 }
 
 

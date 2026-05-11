@@ -20,6 +20,9 @@ export const PRICE_OPTIONS: FieldOption[] = [
   { label: "€ 2.000", value: "2000" },
   { label: "€ 2.500", value: "2500" },
   { label: "€ 3.000", value: "3000" },
+  { label: "€ 4.000", value: "4000" },
   { label: "€ 5.000", value: "5000" },
+  { label: "€ 7.500", value: "7500" },
+  { label: "€ 10.000", value: "10000" },
 ];
 

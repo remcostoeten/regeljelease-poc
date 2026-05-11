@@ -13,7 +13,7 @@ export async function api<T>(
     }
   }
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(`API ${res.status}: ${url.pathname}`);
 
   return res.json() as Promise<T>;

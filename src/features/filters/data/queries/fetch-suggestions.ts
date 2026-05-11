@@ -1,5 +1,5 @@
 import { api } from "@/shared/api/client";
-import type { FilterParams, HomeApiResponse } from "../../types";
+import type { FilterParams, FilterRes } from "../../types";
 
 /**
  * Fetch filter suggestions. Only non-empty params are forwarded.
@@ -9,6 +9,6 @@ import type { FilterParams, HomeApiResponse } from "../../types";
  */
 export function fetchSuggestions(
   params: FilterParams,
-): Promise<HomeApiResponse> {
-  return api<HomeApiResponse>("/home", params as Record<string, string>);
+): Promise<FilterRes> {
+  return api<FilterRes>("/home", params as Record<string, string>);
 }

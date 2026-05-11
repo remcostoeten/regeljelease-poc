@@ -8,7 +8,7 @@ export type RangeValue = {
   max: number;
 };
 
-export type HomeApiSuggestions = {
+export type FilterSuggestions = {
   bodyStyle: Suggestion[];
   brandName: Suggestion[];
   fuel: Suggestion[];
@@ -18,10 +18,10 @@ export type HomeApiSuggestions = {
   transmission: Suggestion[];
 };
 
-export type HomeApiResponse = {
+export type FilterRes = {
   url: string;
   total: number;
-  suggestions: HomeApiSuggestions;
+  suggestions: FilterSuggestions;
 };
 
 export type FieldOption = { label: string; value: string };
