@@ -26,8 +26,24 @@
   color-scheme: light;
 }
 
+@keyframes loading-dot {
+
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
+
+  --animate-loading-dot: loading-dot 900ms cubic-bezier(0.32, 0.72, 0, 1) infinite;
   --color-foreground: var(--foreground);
 
   --color-brand-primary: #ea7520;
@@ -112,16 +128,39 @@ body {
   pointer-events: none;
 }
 
-.hero-background > :not(.hero-background-shape) {
+.hero-background> :not(.hero-background-shape) {
   position: relative;
-  z-index: 1;
 }
 
 @media (max-width: 1023px) {
   .hero-background {
     background: linear-gradient(140deg, #ea7520 0%, #e7371c 100%);
   }
+
   .hero-background-shape {
     display: none;
+  }
+}
+
+@utility scrollbar-visible {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(35, 38, 81, 0.2) transparent;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    display: block;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(35, 38, 81, 0.2);
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(35, 38, 81, 0.4);
   }
 }

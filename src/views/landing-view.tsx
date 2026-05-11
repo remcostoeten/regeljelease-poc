@@ -1,11 +1,11 @@
 import { HeroSection } from "@/features/landing/components/hero-section";
 import { Navbar } from "@/features/landing/components/navbar";
-import type { HomeApiResponse } from "@/features/filters/types";
+import type { FilterRes } from "@/features/filters/types";
 import { FilterBar } from "@/features/filters/components/filter-bar";
 import { HeroBackdropShape } from "@/shared/ui/brand/hero-backdrop-shape";
 import { ErrorBoundary } from "@/shared/ui/error-boundary";
 
-type Props = { initialData: HomeApiResponse };
+type Props = { initialData: FilterRes };
 
 export function LandingView({ initialData }: Props) {
   return (

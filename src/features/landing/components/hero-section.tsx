@@ -1,5 +1,6 @@
 import { TrustpilotLogo } from "@/shared/ui/brand/trustpilot-logo";
 import { TRUSTPILOT_RATING } from "../constants/trustpilot";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -12,14 +13,14 @@ export function HeroSection() {
           </span>
           <span className="block text-brand-ink">minuten geregeld</span>
         </h1>
-        <a href="#" className="flex flex-col items-center text-brand-ink transition-opacity hover:opacity-80 lg:items-start">
+        <Link href="#" className="flex flex-col items-center text-brand-ink transition-opacity lg:items-start">
           <TrustpilotLogo />
           <p className="mt-1 text-review-copy font-medium">
             {TRUSTPILOT_RATING.label}{" "}
             <strong>{TRUSTPILOT_RATING.rating}</strong> op basis van{" "}
             {TRUSTPILOT_RATING.reviewCount} reviews
           </p>
-        </a>
+        </Link>
       </div>
 
       <div className="relative w-full lg:min-h-hero-photo-height lg:w-hero-media lg:shrink-0">

@@ -5,7 +5,7 @@ type IconProps = SVGProps<SVGSVGElement>;
 // would typically use Lucide Icons or Heroicons if using certain ui libs
 
 export function ChevronDownIcon({
-  className = "h-5 w-5",
+  className = "h-4 w-4",
   ...props
 }: IconProps) {
   return (
@@ -17,9 +17,9 @@ export function ChevronDownIcon({
       {...props}
     >
       <path
-        d="M4 6L8 10L12 6"
+        d="M4 6.5L8 10.5L12 6.5"
         stroke="currentColor"
-        strokeWidth="1.8"
+        strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -103,6 +103,34 @@ export function CheckIcon({
         d="M5 12.5L9.2 16.7L19 6.9"
         stroke="currentColor"
         strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+export function MailIcon({ className = "h-5 w-5", ...props }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 16 16"
+      fill="none"
+      aria-hidden="true"
+      {...props}
+    >
+      <rect
+        x="2.5"
+        y="4"
+        width="11"
+        height="8"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.4"
+      />
+      <path
+        d="M2.5 5.5L8 9L13.5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.4"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
