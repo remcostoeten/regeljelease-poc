@@ -1,6 +1,6 @@
 # Regeljelease — Front-end Assessment
 
-![](./showcase.mp4)
+![](./demo.gif)
 
 The assessment requirements:
 1)

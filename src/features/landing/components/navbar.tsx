@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Logo } from "@/shared/ui/brand/logo";
 import {
   ChevronDownIcon,
@@ -14,11 +14,17 @@ import { DesktopNav } from "./desktop-nav";
 import { clsx } from "clsx";
 import { contactConfig } from "@/config/contact";
 
+const drawerEase = [0.32, 0.72, 0, 1] as const;
+const drawerTransition = { duration: 0.28, ease: drawerEase };
+const tapFeedback = { scale: 0.97 };
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <header className="relative z-50 h-14 text-brand-surface md:h-header">
+    <header className="relative z-50 h-16 text-brand-surface md:h-header">
       <div className="absolute inset-x-0 top-0 mx-auto flex w-full max-w-page justify-end px-5 sm:px-8">
         <div className="relative pointer-events-none">
           <button
@@ -111,8 +117,8 @@ export function Navbar() {
         </div>
       </div>
 
-      <div className="mx-auto flex h-14 w-full max-w-page items-center px-5 sm:px-8 md:h-header md:flex-col md:items-end md:justify-end md:pt-header-content-offset">
-        <nav className="flex h-menu-item w-full items-center justify-between gap-4">
+      <div className="mx-auto flex h-16 w-full max-w-page items-center px-5 sm:px-8 md:h-header md:flex-col md:items-end md:justify-end md:pt-header-content-offset">
+        <nav className="flex h-12 w-full items-center justify-between gap-4 md:h-menu-item">
           <Logo className="flex shrink-0 items-center" />
           <DesktopNav />
           <div className="flex items-center gap-3 md:hidden">
@@ -123,15 +129,92 @@ export function Navbar() {
             >
               <PhoneIcon />
             </a>
-            <button
+            <motion.button
               aria-label="Open navigatiemenu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu-drawer"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              whileTap={shouldReduceMotion ? undefined : tapFeedback}
               className="flex h-10 w-10 items-center justify-center transition-all duration-200 hover:opacity-75 active:scale-90"
             >
               <MenuIcon />
-            </button>
+            </motion.button>
           </div>
         </nav>
       </div>
+
+      <AnimatePresence>
+        {isMobileMenuOpen ? (
+          <motion.div
+            className="fixed inset-0 z-[80] md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18, ease: drawerEase }}
+          >
+            <button
+              type="button"
+              aria-label="Sluit navigatiemenu"
+              className="absolute inset-0 bg-brand-ink/35 backdrop-blur-[2px]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            <motion.aside
+              id="mobile-menu-drawer"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Mobiel navigatiemenu"
+              initial={shouldReduceMotion ? { opacity: 0 } : { x: "100%" }}
+              animate={shouldReduceMotion ? { opacity: 1 } : { x: 0 }}
+              exit={shouldReduceMotion ? { opacity: 0 } : { x: "100%" }}
+              transition={drawerTransition}
+              className="absolute right-0 top-0 flex h-full w-[min(21rem,86vw)] flex-col bg-brand-surface p-5 text-brand-ink shadow-brand-float will-change-transform"
+            >
+              <div className="flex items-center justify-between">
+                <Logo className="flex shrink-0 items-center text-brand-ink" />
+                <motion.button
+                  type="button"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  whileTap={shouldReduceMotion ? undefined : tapFeedback}
+                  className="flex h-10 min-w-10 items-center justify-center rounded-full bg-brand-field px-4 text-sm font-semibold transition-colors hover:bg-brand-field-hover focus:outline-none focus:ring-2 focus:ring-brand-ink/20"
+                >
+                  Sluit
+                </motion.button>
+              </div>
+
+              <div className="mt-8 space-y-3">
+                {["Lease aanbod", "Zo werkt het", "Zakelijk leasen"].map((item, index) => (
+                  <motion.button
+                    key={item}
+                    type="button"
+                    initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ...drawerTransition, delay: index * 0.035 }}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    whileTap={shouldReduceMotion ? undefined : tapFeedback}
+                    className="flex h-14 w-full items-center justify-between rounded-2xl bg-brand-field px-4 text-left text-base font-semibold text-brand-ink transition-colors hover:bg-brand-field-hover focus:outline-none focus:ring-2 focus:ring-brand-ink/15"
+                  >
+                    {item}
+                    <ChevronDownIcon className="h-5 w-5 rotate-90 text-brand-primary" />
+                  </motion.button>
+                ))}
+              </div>
+
+              <div className="mt-auto rounded-3xl bg-brand-field p-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-brand-muted/70">
+                  Direct contact
+                </p>
+                <a
+                  href={`tel:${contactConfig.phoneNumber.replace(/\s+/g, "")}`}
+                  className="mt-3 flex h-12 items-center gap-3 rounded-2xl bg-white px-4 text-sm font-bold text-brand-ink shadow-sm"
+                >
+                  <PhoneIcon className="h-4 w-4 text-brand-primary" />
+                  {contactConfig.phoneNumber}
+                </a>
+              </div>
+            </motion.aside>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
